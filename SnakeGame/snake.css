@@ -1,0 +1,12 @@
+/* Write CSS Here */
+*{
+    background-color: rgb(163, 216, 102);
+}
+body {
+  text-align: center;
+}
+.snake {
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
