@@ -1,0 +1,103 @@
+
+
+:root {
+  --clr-primary: rgb(131, 190, 135);
+  --clr-secondary: #333;
+  --clr-container-bg: #8e7d12;
+  --clr-btn-bg: rgb(167, 209, 0);
+  --clr-btn-hover-bg: rgb(137, 161, 40);
+  --clock-primary-shadow: -2px 2px 15px #2f2f29b4;
+  --clock-inset-shadow: 0 -15px 15px rgba(36, 35, 31, 0.05),
+    inset 0 -15px 15px rgba(45, 39, 26, 0.05), 0 15px 15px rgba(23, 22, 14, 0.3),
+    inset 0 15px 15px rgba(12, 11, 8, 0.3);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-primary);
+  position: relative;
+}
+.clock {
+  min-height: 28em;
+  min-width: 28em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-container-bg);
+  background-image: url("clock.jpg");
+  background-position: center center;
+  background-size: cover;
+  border-radius: 50%;
+  border: 20px solid var(--clr-container-bg);
+  box-shadow: var(--clock-inset-shadow);
+  transition: all ease 0.2s;
+}
+.clock:before {
+  content: "";
+  height: 0.75rem;
+  width: 0.75rem;
+  background-color: var(--clr-secondary);
+  border: 2px solid var(--clr-container-bg);
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1000;
+  transition: all ease 0.2s;
+}
+.hour,
+.min,
+.sec {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+}
+.hour {
+  height: 10em;
+  width: 10em;
+}
+.hour:before {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 6px;
+  background-color: var(--clr-primary);
+  border-radius: 6px;
+  box-shadow: var(--clock-primary-shadow);
+}
+.min {
+  height: 12em;
+  width: 12em;
+}
+.min:before {
+  content: "";
+  height: 50%;
+  width: 4px;
+  background-color: var(--clr-primary);
+  border-radius: 4px;
+  box-shadow: var(--clock-primary-shadow);
+}
+.sec {
+  height: 13em;
+  width: 13em;
+}
+.sec:before {
+  content: "";
+  height: 60%;
+  width: 2px;
+  background-color: rgb(7, 7, 6);
+  border-radius: 2px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 10px;
+}
